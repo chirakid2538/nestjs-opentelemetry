@@ -28,7 +28,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       timestamp: new Date().toISOString(),
       path: request.url,
       traceId,
-      errors: responseException?.error ?? {},
+      errors: responseException?.errors ?? {},
     });
   }
 }
