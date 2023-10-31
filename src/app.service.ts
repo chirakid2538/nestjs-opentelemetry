@@ -7,6 +7,6 @@ export class AppService {
 
   appStatus(): Record<string, any> {
     this.loggerService.w({ spanName: 'getHello' });
-    return {};
+    return { timestamp: new Date().toISOString() };
   }
 }
