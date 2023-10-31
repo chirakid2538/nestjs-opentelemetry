@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { BadRequestException, Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -7,6 +7,7 @@ export class AppController {
 
   @Get()
   async appStatus(): Promise<Record<string, any>> {
+    throw new BadRequestException('aaa');
     return this.appService.appStatus();
   }
 }
