@@ -18,12 +18,17 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const span = trace.getActiveSpan();
     const traceId = span.spanContext().traceId;
 
+    /**
+     * @param responseException value is {error:{}}
+     */
+    const responseException: any = exception.getResponse();
     response.status(status).json({
       statusCode: status,
       message: exception.message,
       timestamp: new Date().toISOString(),
       path: request.url,
       traceId,
+      errors: responseException?.error ?? {},
     });
   }
 }
