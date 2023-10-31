@@ -5,7 +5,7 @@ import { ValidationError } from 'class-validator';
 import { AppModule } from './app.module';
 import { otelSDK } from './tracer';
 
-import { HttpExceptionFilter } from '#common/filter/http-exception.filter';
+import { HttpExceptionFilter } from '#common/filters/http-exception.filter';
 import { convertError } from '#common/utils/class-validator.util';
 
 async function bootstrap() {
