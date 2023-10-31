@@ -3,5 +3,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["getucommerce", "nestjs", "opentelemetry", "otel", "zipkin"]
+  "cSpell.words": [
+    "chirakid",
+    "getucommerce",
+    "kaweesirikon",
+    "nestjs",
+    "opentelemetry",
+    "otel",
+    "zipkin"
+  ]
 }
