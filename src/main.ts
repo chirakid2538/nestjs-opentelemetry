@@ -5,8 +5,9 @@ import { ValidationError } from 'class-validator';
 import { AppModule } from './app.module';
 import { otelSDK } from './tracer';
 
-import { HttpExceptionFilter } from '#common/filters/http-exception.filter';
 import { convertError } from '#common/utils/class-validator.util';
+import { HttpExceptionFilter } from '#common/filters/http-exception.filter';
+import { TransformInterceptor } from '#common/interceptors/transform.interceptor';
 
 async function bootstrap() {
   /**
@@ -30,6 +31,7 @@ async function bootstrap() {
       },
     }),
   );
+  app.useGlobalInterceptors(new TransformInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(process.env.PORT);
 }
